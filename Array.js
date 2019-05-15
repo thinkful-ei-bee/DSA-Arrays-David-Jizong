@@ -83,7 +83,17 @@ function main() {
   arr.push(19);
   arr.push(45);
   arr.push(10);
+  arr.pop();
+  arr.pop();
+  arr.pop();
+  console.log(arr.get(0));
+  arr.pop();
+  arr.pop();
+  arr.pop();
+  arr.push('tauhida');
+  console.log(arr.get(0));
   console.log(arr); 
+
 }
 
 // exercise 2
@@ -96,5 +106,12 @@ function main() {
 // ptr is 3 since we only move when we resize from 3 to 12
 
 // exercise 3
-// 
+// length 3, capacity 12, ptr 3
+// pop reduces length but does not change capacity or pointer
+
+// exercise 4
+// first result is 3 as expected
+// result of "tauhida" is NaN because the memory is stored as floating point values
+
+// resize is needed since memory immediately after the array might not be free
 main();
