@@ -83,3 +83,19 @@ function mergeArrays(arr1, arr2) {
 console.log(mergeArrays([1, 3, 6, 8, 11], [2, 3, 5, 8, 9, 10]));
 // seems like O(n^2) with the push incorporated
 
+function removeChars(str, chars) {
+  let output = '';
+  for (let i = 0; i < str.length; i++) {
+    const currentChar = str[i];
+    if (chars.indexOf(currentChar) === -1) {
+      output += currentChar;
+    }
+  }
+
+  return output;
+}
+
+console.log(removeChars('Battle of the Vowels: Hawaii vs. Grozny', 'aeiou'));
+
+// If += is O(n), total is O(n^2). We can make this O(n) by making allocating more space to output string
+
