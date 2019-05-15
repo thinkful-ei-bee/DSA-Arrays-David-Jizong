@@ -67,6 +67,7 @@ class Array {
     }
     memory.copy(this.ptr, oldPtr, this.length);
     memory.free(oldPtr);
+    this._capacity = size;
   }
 }
 
@@ -77,6 +78,7 @@ function main() {
 
   let arr = new Array();
   arr.push(3);
+  console.log(arr);
   console.log(arr.get(0));
 }
 
