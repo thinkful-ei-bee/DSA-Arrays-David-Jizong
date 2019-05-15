@@ -18,7 +18,7 @@ class Array {
   }
 
   get(index) {
-    if (index < 0 || >= this.length) {
+    if (index < 0 || index >= this.length) {
       throw new Error('Index error');
     }
 
