@@ -128,4 +128,31 @@ function optimizedProducts(arr) {
 
 console.log(optimizedProducts([1, 3, 9, 4]));
 
+function setZeros(array, row, column) {
+  array[row] = array[row].map(ele => 0);
+  for (let i = 0; i < array.length; i++) {
+    array[i][column] = 0;
+  }
+  return array;
+}
+
+function twoDArray(arr) {
+  const output = arr.map(ele => ele.map(el => el));
+  for (let row = 0; row < arr.length; row++) {
+    for (let column = 0; column < arr[0].length; column++) {
+      if(arr[row][column] === 0){
+        setZeros(output, row, column);
+      }
+    }
+  }
+  return output;
+}
+const testArr = [[1,0,1,1,0],
+  [0,1,1,1,0],
+  [1,1,1,1,1],
+  [1,0,1,1,1],
+  [1,1,1,1,1]];
+console.log(twoDArray(testArr));
+
+// this is O(n^3) since there are 3 nested loops, including the extra function.
 
