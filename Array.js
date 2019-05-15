@@ -78,8 +78,23 @@ function main() {
 
   let arr = new Array();
   arr.push(3);
-  console.log(arr);
-  console.log(arr.get(0));
+  arr.push(5);
+  arr.push(15);
+  arr.push(19);
+  arr.push(45);
+  arr.push(10);
+  console.log(arr); 
 }
 
+// exercise 2
+// after first step in exercise 2, length 1, capacity 3, ptr 0
+// after adding additional pushes, length 6, capacity 12, ptr 3
+// length is 6 since we have put in 6 values
+// capacity is 12 because we add 1 and then triple when we resize
+// (0 + 1) * 3 = 3;
+// (3 + 1) * 3 = 12;
+// ptr is 3 since we only move when we resize from 3 to 12
+
+// exercise 3
+// 
 main();
