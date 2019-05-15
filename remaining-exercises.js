@@ -99,3 +99,20 @@ console.log(removeChars('Battle of the Vowels: Hawaii vs. Grozny', 'aeiou'));
 
 // If += is O(n), total is O(n^2). We can make this O(n) by making allocating more space to output string
 
+function products(arr) {
+  const output = [];
+  for (let i = 0; i < arr.length; i++) {
+    let product = 1;
+    for (let j = 0; j < arr.length; j++) {
+      if (i !== j) {
+        product *= arr[j];
+      }
+    }
+    output.push(product);
+  }
+  return output;
+}
+
+console.log(products([1, 3, 9, 4]));
+// O(n^2)
+
