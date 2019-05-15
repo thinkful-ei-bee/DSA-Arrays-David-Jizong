@@ -33,3 +33,26 @@ function moreThanFive(arr) {
 
 // in the worst case this would be O(n^2) if push needs to recopy array each time. We could make this O(n) by allocating a space equal to the original array.
 
+function maxSum(arr) {
+  if (arr.length < 2) {
+    return 'need two numbers for a sum';
+  }
+
+  let max = arr[0] + arr[1];
+  for (let i = 2; i < arr.length; i++) {
+    for (let j = 0; j <= arr.length - i; j++) {
+      let currentSum = 0;
+      for (let k = 0; k < i; k++) {
+        currentSum += arr[j + k];
+      }
+      if (currentSum > max) {
+        max = currentSum;
+      }
+    }
+  }
+  return max;
+}
+
+console.log(maxSum([4, 6, -3, 5, -2, 1]));
+// O(n^3) -- there might be a better way to do it.
+
