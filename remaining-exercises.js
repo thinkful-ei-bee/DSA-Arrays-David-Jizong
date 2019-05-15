@@ -156,3 +156,21 @@ console.log(twoDArray(testArr));
 
 // this is O(n^3) since there are 3 nested loops, including the extra function.
 
+function strRotation(str1, str2) {
+  if (str1.length !== str2.length) {
+    return false;
+  }
+
+  // for string of length n, there are n possible rotations
+  const rotations = [];
+  for (let i = 0; i < str1.length; i++) {
+    rotations.push(str1.slice(i) + str1.slice(0, i));
+  } 
+  if (rotations.indexOf(str2) === -1) {
+    return false;
+  }
+  return true;
+}
+
+console.log(strRotation('amazon', 'azonma'));
+console.log(strRotation('amazon', 'azonam'));
