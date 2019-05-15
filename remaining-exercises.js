@@ -116,5 +116,16 @@ function products(arr) {
 console.log(products([1, 3, 9, 4]));
 // O(n^2)
 // if there are no 0s we could make this O(n) by multiplying all numbers, then dividing by each to get the individual products
+// and without any pushes, given no 0s:
+
+function optimizedProducts(arr) {
+  let product = 1;
+  arr.forEach(ele => {
+    product *= ele;
+  });
+  return arr.map(ele => product).map((ele, index) => ele/arr[index]);
+}
+
+console.log(optimizedProducts([1, 3, 9, 4]));
 
 
