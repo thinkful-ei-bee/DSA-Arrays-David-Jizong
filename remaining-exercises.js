@@ -56,3 +56,30 @@ function maxSum(arr) {
 console.log(maxSum([4, 6, -3, 5, -2, 1]));
 // O(n^3) -- there might be a better way to do it.
 
+function mergeArrays(arr1, arr2) {
+  const output = [];
+  let ptr1 = 0;
+  let ptr2 = 0;
+  while (ptr1 < arr1.length || ptr2 < arr2.length) {
+    if (arr1[ptr1] < arr2[ptr2]) {
+      output.push(arr1[ptr1]);
+      ptr1++;
+    } else if (arr1[ptr1] > arr2[ptr2]) {
+      output.push(arr2[ptr2]);
+      ptr2++;
+    } else if (arr1[ptr1] === arr2[ptr2]) {
+      output.push(arr1[ptr1]);
+      output.push(arr1[ptr2]);
+      ptr1++;
+      ptr2++;
+    } else {
+      ptr1++;
+      ptr2++;
+    }
+  }
+  return output;
+}
+
+console.log(mergeArrays([1, 3, 6, 8, 11], [2, 3, 5, 8, 9, 10]));
+// seems like O(n^2) with the push incorporated
+
